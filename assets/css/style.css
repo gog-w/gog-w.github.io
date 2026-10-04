@@ -1,0 +1,205 @@
+/* ============================================================
+   山悦造物笔记 · 个人博客样式
+   设计：暖白底 + 古铜点缀，衬线标题，无外部字体/JS 依赖
+   ============================================================ */
+
+:root {
+  --bg: #faf6f0;          /* 暖白底 */
+  --surface: #ffffff;      /* 卡片白 */
+  --ink: #2b2622;         /* 主文字 */
+  --ink-soft: #6b6157;    /* 次要文字 */
+  --line: #e8ddce;        /* 分隔线 */
+  --accent: #a9683a;       /* 古铜/红铜点缀 */
+  --accent-dark: #8a5229;
+  --maxw: 760px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC", sans-serif;
+  font-size: 17px;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .serif {
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC",
+    "STSong", "SimSun", serif;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+a { color: var(--accent-dark); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- 顶栏 ---------- */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.site-header .wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 1px;
+}
+.brand:hover { text-decoration: none; color: var(--accent-dark); }
+.nav a {
+  color: var(--ink-soft);
+  margin-left: 22px;
+  font-size: 15px;
+}
+.nav a:hover, .nav a.active { color: var(--accent-dark); text-decoration: none; }
+
+/* ---------- 容器 ---------- */
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+/* ---------- 首页 Hero ---------- */
+.hero { padding: 56px 0 28px; }
+.hero .kicker {
+  color: var(--accent);
+  font-size: 14px;
+  letter-spacing: 3px;
+  margin: 0 0 12px;
+}
+.hero h1 { font-size: 34px; margin: 0 0 16px; }
+.hero p.lead {
+  color: var(--ink-soft);
+  font-size: 17px;
+  margin: 0;
+  max-width: 60ch;
+}
+
+/* ---------- 文章列表 ---------- */
+.post-list { list-style: none; padding: 0; margin: 24px 0 60px; }
+.post-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 26px 28px;
+  margin-bottom: 18px;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.post-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(120, 90, 50, .08);
+}
+.post-card .date {
+  color: var(--ink-soft);
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin: 0 0 8px;
+}
+.post-card h2 { margin: 0 0 10px; font-size: 22px; }
+.post-card h2 a { color: var(--ink); }
+.post-card h2 a:hover { color: var(--accent-dark); text-decoration: none; }
+.post-card p.excerpt { color: var(--ink-soft); margin: 0; font-size: 15.5px; }
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--accent-dark);
+  background: #f4e7d8;
+  border-radius: 20px;
+  padding: 2px 12px;
+  margin-top: 14px;
+}
+
+/* ---------- 文章正文页 ---------- */
+.article { padding: 48px 0 20px; }
+.article .date { color: var(--ink-soft); font-size: 14px; letter-spacing: 1px; margin: 0 0 10px; }
+.article h1 { font-size: 30px; margin: 0 0 24px; }
+.article h2 { font-size: 22px; margin: 36px 0 12px; }
+.article p { margin: 0 0 18px; }
+.article blockquote {
+  margin: 24px 0;
+  padding: 4px 20px;
+  border-left: 3px solid var(--accent);
+  background: #f6efe4;
+  color: var(--ink-soft);
+  border-radius: 0 8px 8px 0;
+}
+.article ul, .article ol { padding-left: 24px; }
+.article li { margin-bottom: 8px; }
+.article code {
+  background: #f1e9dc;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 15px;
+}
+.back {
+  display: inline-block;
+  margin: 30px 0 10px;
+  font-size: 15px;
+}
+
+/* ---------- 关于页 ---------- */
+.about { padding: 48px 0 60px; }
+.about h1 { font-size: 30px; margin: 0 0 20px; }
+.about p { color: var(--ink); }
+.signature { margin-top: 36px; color: var(--ink-soft); font-size: 15px; }
+
+/* ---------- 页脚 ---------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 40px;
+  padding: 28px 0 48px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  text-align: center;
+}
+.site-footer a { color: var(--ink-soft); }
+.site-footer a:hover { color: var(--accent-dark); }
+
+/* ---------- 首页栏目入口 ---------- */
+.section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 8px 0 40px;
+}
+.section-tile {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 22px 24px;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.section-tile:hover {
+  text-decoration: none;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.section-tile h3 { margin: 0 0 6px; font-size: 19px; color: var(--ink); }
+.section-tile p { margin: 0; color: var(--ink-soft); font-size: 14.5px; line-height: 1.6; }
+
+/* ---------- 移动端 ---------- */
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .section-grid { grid-template-columns: 1fr; }
+  .hero { padding: 36px 0 18px; }
+  .hero h1 { font-size: 27px; }
+  .article h1 { font-size: 25px; }
+  .nav a { margin-left: 14px; }
+  .post-card { padding: 20px; }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>非程序员的 Git/GitHub 入门：把博客推上线的最小流程 · 山悦造物笔记</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">山悦造物笔记</a>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="tech.html" class="active">技术分享</a>
+        <a href="software.html">软件分享</a>
+        <a href="about.html">关于</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap article">
+    <p class="date">2026-09-18 · 工具入门</p>
+    <h1>非程序员的 Git/GitHub 入门：把博客推上线的最小流程</h1>
+    <p>博客第一次传完后，以后想更新，总不想每次都拖网页。记住下面这四行命令就够了，不用学全 Git。</p>
+    <h2>只需要记住四步</h2>
+    <ul>
+      <li><code>git add .</code> —— 把改动的文件都暂存；</li>
+      <li><code>git commit -m "更新说明"</code> —— 记下这次改了什么；</li>
+      <li><code>git push</code> —— 推到 GitHub；</li>
+      <li>等一分钟，Pages 自动更新。</li>
+    </ul>
+    <blockquote>第一次用之前，先在装 Git 后配好用户名邮箱，并在 GitHub 上配好 SSH 或用登录凭证，否则 push 会要求输密码。</blockquote>
+    <h2>什么时候用网页上传 vs 命令行</h2>
+    <p>改一两篇文章，网页拖文件最省事；一次改很多文件、或想留版本记录，用上面四行命令。两者混着用完全没问题。</p>
+    <a class="back" href="tech.html">← 返回技术分享</a>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">© 2026 山悦造物笔记 · 十堰 · <a href="about.html">关于本站</a></div>
+  </footer>
+</body>
+</html>

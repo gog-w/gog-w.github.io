@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>本地跑大模型：显卡怎么选、成本怎么估 · 山悦造物笔记</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">山悦造物笔记</a>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="tech.html" class="active">技术分享</a>
+        <a href="software.html">软件分享</a>
+        <a href="about.html">关于</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap article">
+    <p class="date">2026-09-12 · AI</p>
+    <h1>本地跑大模型：显卡怎么选、成本怎么估</h1>
+    <p>想把模型跑在自己机器上，最关键是显存。先想清楚你要跑多大的模型，再决定显卡，别反过来。</p>
+    <h2>显存决定一切</h2>
+    <ul>
+      <li>量化后的模型，大致按"模型参数量 × 量化位数"估算所需显存，留点余量；</li>
+      <li>显存不够就降量化等级、或换更小的模型，别硬上，会爆内存；</li>
+      <li>日常写文案、答问题，7B~14B 量化模型足够，不用追大参数。</li>
+    </ul>
+    <h2>值不值得本地跑</h2>
+    <blockquote>只是偶尔用、又不想折腾网络和额度，直接用 API 更省钱。本地跑的价值在于：数据不出本机、不用按 token 付费、能离线。</blockquote>
+    <h2>先借后买</h2>
+    <p>先用现有机器 + 小模型跑通流程，确认真的高频用，再升级显卡。为"以后可能用得上"买高端卡，多半吃灰。</p>
+    <a class="back" href="tech.html">← 返回技术分享</a>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">© 2026 山悦造物笔记 · 十堰 · <a href="about.html">关于本站</a></div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>本地/API 调用大模型，四个常见报错怎么根治 · 山悦造物笔记</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">山悦造物笔记</a>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="tech.html" class="active">技术分享</a>
+        <a href="software.html">软件分享</a>
+        <a href="about.html">关于</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap article">
+    <p class="date">2026-09-15 · AI / 排障</p>
+    <h1>本地/API 调用大模型，四个常见报错怎么根治</h1>
+
+    <p>搭本地模型、接第三方 API 这阵子，报错就那么几类，但每次都要翻半天。按出现频率整理成一张排查表，下次照着对号入座。</p>
+
+    <h2>429 Too Many Requests —— 请求超限</h2>
+    <p>这不是你代码错了，是触发了速率限制。先别重试，按顺序查：</p>
+    <ul>
+      <li>是不是并发太高 / 重试太猛，加上请求间隔和退避；</li>
+      <li>免费额度是不是被你一个人刷爆了；</li>
+      <li>换个时间再试，高峰期尤其容易 429。</li>
+    </ul>
+
+    <h2>401 Unauthorized —— 认证没过</h2>
+    <p>几乎都是 Key 的问题：</p>
+    <ul>
+      <li>API Key 复制时多了空格或少了字符；</li>
+      <li>请求头写法不对，要 <code>Authorization: Bearer 你的key</code>；</li>
+      <li>Key 被禁用、删了，或环境变量没真正生效（重启进程再读）。</li>
+    </ul>
+
+    <h2>400 Bad Request / 序列化错误</h2>
+    <p>请求发出去了，但格式服务器不认：</p>
+    <blockquote>
+      多半是 messages 结构不对——角色字段要么是 system/user/assistant，content 是空或类型错。把请求体打印出来，对照官方文档逐字段核对。
+    </blockquote>
+
+    <h2>No credits remaining —— 余额耗尽</h2>
+    <p>API Key 没问题，就是账户没钱了。先去控制台看余额和用量；别在代码里死磕，先充值或换 Key。</p>
+
+    <h2>排查顺序（建议）</h2>
+    <ol>
+      <li>看状态码：4xx 先看自己的请求，429/401 先看 Key 和额度；</li>
+      <li>把发出去的完整请求体打印出来，肉眼对文档；</li>
+      <li>用 curl 或官方调试台发一条最简请求，通了再回代码里对比。</li>
+    </ol>
+
+    <a class="back" href="tech.html">← 返回技术分享</a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      © 2026 山悦造物笔记 · 十堰 · <a href="about.html">关于本站</a>
+    </div>
+  </footer>
+
+</body>
+</html>

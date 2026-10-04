@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>旧主机跑工业 3D 扫描：Win7 + 1394b 采集卡配置记 · 山悦造物笔记</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">山悦造物笔记</a>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="tech.html" class="active">技术分享</a>
+        <a href="software.html">软件分享</a>
+        <a href="about.html">关于</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap article">
+    <p class="date">2026-09-28 · 硬件 / 扫描</p>
+    <h1>旧主机跑工业 3D 扫描：Win7 + 1394b 采集卡配置记</h1>
+
+    <p>FlexScan3D 配的工业相机走 1394b（火线）接口，新主板早就没这口了，新系统它又不认。最后是用一台旧主机专门跑扫描，记录一下整个配置链路。</p>
+
+    <h2>为什么是 Win7 而不是 Win10/11</h2>
+    <p>这代工业相机的驱动和 SDK 只在 Win7 下做过验证，强行上新系统会出相机认不到、帧率掉的问题。与其折腾兼容性，不如专门留一台旧主机跑扫描，省心。</p>
+
+    <h2>主板与采集卡怎么配</h2>
+    <ul>
+      <li>选一块还有 <strong>PCIe 插槽</strong>、能稳上 Win7 的旧主板；</li>
+      <li>1394b 采集卡要挑带 <strong>TI（德州仪器）芯片组</strong>的——其他芯片组常出丢帧、相机掉线；</li>
+      <li>系统里先装采集卡驱动，再装相机驱动和 FlexScan3D，顺序别反。</li>
+    </ul>
+
+    <h2>最容易踩的坑：供电</h2>
+    <blockquote>
+      1394b 相机靠总线供电或外接电源。如果扫着扫着相机突然掉线，八成是供电不足——务必用相机自带的外接电源，别只靠主板插槽供电。
+    </blockquote>
+
+    <h2>配通后的检查清单</h2>
+    <ol>
+      <li>设备管理器里相机、采集卡都没有黄色感叹号；</li>
+      <li>FlexScan3D 能正常出图、帧率稳定；</li>
+      <li>连续扫半小时不掉线，才算真的稳。</li>
+    </ol>
+
+    <p>这套旧平台专门干扫描，主力机照样跑建模和设计，两台分工互不干扰。</p>
+
+    <a class="back" href="tech.html">← 返回技术分享</a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      © 2026 山悦造物笔记 · 十堰 · <a href="about.html">关于本站</a>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>四轴/五轴雕刻：对刀、找正与后处理要点 · 山悦造物笔记</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">山悦造物笔记</a>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="tech.html" class="active">技术分享</a>
+        <a href="software.html">软件分享</a>
+        <a href="about.html">关于</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap article">
+    <p class="date">2026-09-25 · 数控雕刻</p>
+    <h1>四轴/五轴雕刻：对刀、找正与后处理要点</h1>
+    <p>机床雕刻最容易出错的不是刀路，而是上机前的对刀和找正。模型再漂亮，坐标偏了几毫米就全废。</p>
+    <h2>对刀</h2>
+    <ul>
+      <li>每把刀都要单独对，刀长、刀径补偿输进去；</li>
+      <li>换刀后重新对一次，别凭上次的记忆；</li>
+      <li>对完空跑一遍，确认 Z 轴不会下切到台面。</li>
+    </ul>
+    <h2>找正</h2>
+    <p>毛坯装夹后，先打表或用探针找正，确保工件坐标系和机床坐标系对齐。四轴加工尤其要确认回转中心对不对，否则雕出来是歪的。</p>
+    <blockquote>首件一定单段、降速空跑，看清走刀方向再放开全速。废一块料的钱，远小于撞一次机。</blockquote>
+    <h2>后处理</h2>
+    <p>不同机床认的 G 代码格式不一样，后处理文件必须和你的机器匹配，别拿通用后处理直接跑。雕完先看首件，再批量。</p>
+    <a class="back" href="tech.html">← 返回技术分享</a>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">© 2026 山悦造物笔记 · 十堰 · <a href="about.html">关于本站</a></div>
+  </footer>
+</body>
+</html>

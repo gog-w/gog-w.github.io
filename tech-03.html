@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windows 系统深度优化：C 盘清理与开机加速 · 山悦造物笔记</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">山悦造物笔记</a>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="tech.html" class="active">技术分享</a>
+        <a href="software.html">软件分享</a>
+        <a href="about.html">关于</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap article">
+    <p class="date">2026-10-03 · 系统运维</p>
+    <h1>Windows 系统深度优化：C 盘清理与开机加速</h1>
+    <p>工作室几台电脑跑久了都变慢、C 盘飘红。整理一套安全、可复现的优化流程，照着做不破坏系统。</p>
+    <h2>一、先清真正占地方的</h2>
+    <ul>
+      <li>设置 → 系统 → 存储 → 临时文件，勾选后清理；</li>
+      <li>把下载、文档、桌面大文件迁到 D 盘，别堆 C 盘；</li>
+      <li>用磁盘清理工具清理"以前的 Windows 安装"，能省下几个 G。</li>
+    </ul>
+    <h2>二、开机项只留必要的</h2>
+    <p>任务管理器 → 启动，把打印机、云盘、更新助手之类全禁掉，只留输入法和显卡相关。开机速度立刻上来。</p>
+    <blockquote>优化的原则：只关你确认没用的启动项和临时文件，注册表、系统服务不要乱删，出问题难恢复。</blockquote>
+    <h2>三、Defender 占资源时怎么办</h2>
+    <p>跑切片、扫描这类大文件任务时，Windows Defender 实时扫描会拖慢速度。可以把工作文件夹加入"排除项"，让它别反复扫——比直接关掉系统服务更安全、也更稳。</p>
+    <a class="back" href="tech.html">← 返回技术分享</a>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">© 2026 山悦造物笔记 · 十堰 · <a href="about.html">关于本站</a></div>
+  </footer>
+</body>
+</html>
