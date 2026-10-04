@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>产品图处理：不装 Photoshop 也能修图 · 山悦造物笔记</title>
+  <title>软件格式对接：Rhino 怎么给精雕和打印机 · 山悦造物笔记</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -19,18 +19,19 @@
     </div>
   </header>
   <main class="wrap article">
-    <p class="date">2026-09-15 · 修图</p>
-    <h1>产品图处理：不装 Photoshop 也能修图</h1>
-    <p>产品图不需要专业级精修，去掉杂乱背景、调亮、正一下颜色，就够上架用了。</p>
-    <h2>常做的三件事</h2>
+    <p class="date">2026-09-16 · 格式对接</p>
+    <h1>软件格式对接：Rhino 怎么给精雕和打印机</h1>
+    <p>模型在不同软件间传，最容易丢面、破洞、比例错。搞清楚各吃什么格式。</p>
+    <h2>给 3D 打印</h2>
     <ul>
-      <li>抠图换白底：产品图统一白底，店铺更干净；</li>
-      <li>调亮、自动对比度：手机拍的图 often 偏暗；</li>
-      <li>裁切统一比例：主图规格一致。</li>
+      <li>导出 STL / OBJ，导出前做一次网格检查和封装；</li>
+      <li>单位确认毫米，别导出去大了十倍；</li>
+      <li>壁厚给够，太薄打印和铸造都过不了。</li>
     </ul>
-    <blockquote>首饰图别过度磨皮调色，金属和绿松石的质感要真实。修过头，收到货的客户会觉得"图不对货"。</blockquote>
-    <h2>工具</h2>
-    <p>在线修图或轻量本地工具足够日常用，不用为偶尔修图装一套大型软件。</p>
+    <h2>给北京精雕/五轴</h2>
+    <blockquote>走曲面加工用 IGES/STEP 这类曲面格式，别走 STL 网格——曲面精度高，刀路更顺。网格件只适合浮雕类。</blockquote>
+    <h2>检查</h2>
+    <p>每次导出后在目标软件里重新量一遍尺寸、看一眼有没有破面。差一点，出来的件就不对。</p>
     <a class="back" href="software.html">← 返回软件分享</a>
   </main>
   <footer class="site-footer">
